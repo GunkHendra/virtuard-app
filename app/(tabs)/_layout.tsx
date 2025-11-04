@@ -1,13 +1,12 @@
 import { icons } from "@/constants/icons";
+import { images } from "@/constants/images";
 import { Tabs } from "expo-router";
 import { Image, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 function TabIcon({ icon }: any) {
     return (
-        <View>
-            <Image source={icon} tintColor="#151312" className="size-6" />
-        </View>
+        <Image source={icon} tintColor="#111A19" className="w-8 h-8" />
     );
 }
 
@@ -17,19 +16,19 @@ function HeaderIcon() {
     return (
         <View
             style={{ paddingTop: 20 + insets.top, paddingHorizontal: 16 }}
-            className="bg-white px-4 py-4 flex-row items-center justify-between"
+            className="bg-background px-4 py-4 flex-row items-center justify-between"
         >
             <TouchableOpacity onPress={() => console.log("Menu pressed")}>
                 <Image
-                    source={icons.arrow}
-                    className="size-6"
+                    source={icons.burger}
+                    className="w-10 h-10"
                     tintColor="#151312"
                 />
             </TouchableOpacity>
 
             <View className="flex-1 items-center">
                 <Image
-                    source={icons.logo}
+                    source={images.logo}
                     className="h-8 w-24"
                     resizeMode="contain"
                 />
@@ -37,7 +36,7 @@ function HeaderIcon() {
 
             <TouchableOpacity onPress={() => console.log("Profile pressed")}>
                 <Image
-                    source={icons.person}
+                    source={images.profilepicture}
                     className="size-10 rounded-full"
                 />
             </TouchableOpacity>
@@ -57,6 +56,7 @@ export default function Layout() {
                     paddingBottom: insets.bottom,
                     justifyContent: "center",
                     alignItems: "center",
+                    backgroundColor: "#FAFAFA"
                 },
                 headerShown: true,
                 header: () => <HeaderIcon />
@@ -67,7 +67,7 @@ export default function Layout() {
                 options={{
                     title: "Home",
                     tabBarIcon: () => (
-                        <TabIcon icon={icons.home} />
+                        <TabIcon icon={icons.search} />
                     ),
                 }}
             />
@@ -77,7 +77,7 @@ export default function Layout() {
                 options={{
                     title: "Hotspot",
                     tabBarIcon: () => (
-                        <TabIcon icon={icons.search} />
+                        <TabIcon icon={icons.hotspot} />
                     ),
                 }}
             />
@@ -87,7 +87,7 @@ export default function Layout() {
                 options={{
                     title: "Plus",
                     tabBarIcon: () => (
-                        <TabIcon icon={icons.person} />
+                        <TabIcon icon={icons.plus} />
                     ),
                 }}
             />

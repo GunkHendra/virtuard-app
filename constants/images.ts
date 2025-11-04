@@ -1,9 +1,9 @@
-import bg from "@/assets/images/bg.png";
-import highlight from "@/assets/images/highlight.png";
-import rankingGradient from "@/assets/images/rankingGradient.png";
+import profilepicture from "@/assets/images/profile-picture.png";
+import villa from "@/assets/images/villa.png";
+import logo from "@/assets/images/virtuard-logo.png";
 
 export const images = {
-  bg,
-  highlight,
-  rankingGradient,
+  profilepicture,
+  logo,
+  villa,
 };
